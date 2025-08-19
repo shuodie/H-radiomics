@@ -153,7 +153,7 @@ def save_cluster_labels(input_folder, coordinate_label_dict, output_folder):
         sitk.WriteImage(cluster_image_sitk, output_file)
 
 
-patient_dir = os.path.abspath(os.path.join('ba yu bin', os.pardir))
+patient_dir = os.path.abspath(os.path.join('file_name', os.pardir))
 for patient_name in os.listdir(patient_dir):
     patient_path = os.path.join(patient_dir, patient_name)
     if os.path.isdir(patient_path) and patient_name not in ['.idea', 'exampleSettings', 'H_radiomics','3D reconstuction', 'logistic regression']:
@@ -170,4 +170,5 @@ for patient_name in os.listdir(patient_dir):
         if not os.path.exists(output_folder):
             os.makedirs(output_folder)
         save_cluster_labels(input_folder, coordinate_label_dict, output_folder)
+
 
