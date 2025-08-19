@@ -97,7 +97,7 @@ for cls, features in six.iteritems(extractor.enabledFeatures):
         print(getattr(featureClasses[cls], 'get%sFeatureValue' % f).__doc__)
 
 # Get the directory containing the patient data
-patient_dir = os.path.abspath(os.path.join('bao xin yue', os.pardir))
+patient_dir = os.path.abspath(os.path.join('file_name', os.pardir))
 for patient_name in os.listdir(patient_dir):
     patient_path = os.path.join(patient_dir, patient_name)
     if os.path.isdir(patient_path) and patient_name not in ['.idea', 'exampleSettings']:
@@ -140,4 +140,5 @@ for patient_name in os.listdir(patient_dir):
                     sitk.WriteImage(val, output_file, True)
                     print(f"Stored feature {key} in {output_file}")
                 else:  # Diagnostic information
+
                     print(f"\t{key}: {val}")
