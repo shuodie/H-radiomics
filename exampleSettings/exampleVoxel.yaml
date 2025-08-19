@@ -1,0 +1,52 @@
+
+imageType:
+  Original: {}
+
+featureClass:
+  firstorder:
+    - 10Percentile
+    - 90Percentile
+    - Energy
+    - Mean
+    - Median
+    - Minimum
+    - RootMeanSquared
+  glcm:
+    - Autocorrelation
+#    - JointAverage
+    - SumAverage
+  gldm:
+    - DependenceEntropy
+    - GrayLevelNonUniformity
+    - HighGrayLevelEmphasis
+    - LargeDependenceLowGrayLevelEmphasis
+    - LowGrayLevelEmphasis
+    - SmallDependenceHighGrayLevelEmphasis
+  glrlm:
+    - GrayLevelNonUniformity
+    - HighGrayLevelRunEmphasis
+    - LongRunHighGrayLevelEmphasis
+    - LongRunLowGrayLevelEmphasis
+    - LowGrayLevelRunEmphasis
+    - RunLengthNonUniformity
+    - RunPercentage
+    - RunVariance
+    - ShortRunHighGrayLevelEmphasis
+  ngtdm:
+    - Coarseness
+setting:
+  normalize: true
+  normalizeScale: 100
+  binWidth: 25
+  force2D: true
+  label: 1
+#  correctMask: True
+  resampledPixelSpacing: [1, 1, 1]
+  interpolator: 'sitkBSpline'
+  padDistance: 0
+
+voxelSetting:
+  kernelRadius: 1
+  maskedKernel: True
+  initValue: nan
+  voxelBatch: 50000
