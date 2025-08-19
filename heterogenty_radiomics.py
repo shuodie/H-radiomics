@@ -6,7 +6,7 @@ import radiomics
 from radiomics import featureextractor
 
 # Get the directory containing the patient data
-patient_dir = os.path.abspath(os.path.join('ba yu bin', os.pardir))
+patient_dir = os.path.abspath(os.path.join('file_name', os.pardir))
 
 if not os.path.exists(patient_dir):
     print(f"Error: Directory '{patient_dir}' does not exist.")
@@ -77,4 +77,5 @@ for patient_name in os.listdir(patient_dir):
                 result_df = result_df.append(mergedFeatureVector, ignore_index=True)
 
         # Save the results to an Excel file in the current patient's directory
+
         result_df.to_excel(os.path.join(patient_path, 'features.xlsx'), index=False)
